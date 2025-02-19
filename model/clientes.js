@@ -1,4 +1,4 @@
-import ClienteDB from "./clienteDB.js";
+import ClienteDB from "../database/clienteDB.js";
 export default class Cliente {
     #id
     #nome;

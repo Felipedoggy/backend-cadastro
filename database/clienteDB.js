@@ -16,29 +16,34 @@ export default class ClienteDB {
     async gravar(cliente) {
         if (cliente instanceof Cliente) {
             const conexao = await conectar();
-            const sql = "INSERT INTO cliente (nome, email, telefone) VALUES (?, ?, ?, ?)";
+            const sql = "INSERT INTO cliente (id, nome, email, telefone) VALUES (?, ?, ?, ?)";
             const parametros = [cliente.id, cliente.nome, cliente.email, cliente.telefone];
+            await conexao.execute(sql, parametros);
+            conexao.release();
         }
-        await conexao.execute(sql, parametros);
-        conexao.release();
+ 
     }
     async alterar(cliente) {
         if (cliente instanceof Cliente) {
             const conexao = await conectar();
             const sql = "UPDATE cliente SET nome = ?, email = ?, telefone = ? WHERE id = ?";
             const parametros = [cliente.nome, cliente.email, cliente.telefone, cliente.id];
+            await conexao.execute(sql, parametros);
+            conexao.release();
         }
-        await conexao.execute(sql, parametros);
-        conexao.release();
+
+
     }
     async excluir(cliente) {
         if (cliente instanceof Cliente) {
             const conexao = await conectar();
             const sql = "DELETE FROM cliente WHERE id = ?";
             const parametros = [cliente.id];
+            await conexao.execute(sql, parametros);
+            conexao.release();
         }
-        await conexao.execute(sql, parametros);
-        conexao.release();
+ 
+
     }
     async consultar(cliente) {
         const conexao = await conectar();
