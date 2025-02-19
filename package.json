@@ -1,0 +1,30 @@
+{
+  "name": "backend-cadastro",
+  "version": "1.0.0",
+  "description": "backend da aplicação de cadastro de cliente",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Felipedoggy/backend-cadastro.git"
+  },
+  "keywords": [
+    "API",
+    "Backend",
+    "MBC",
+    "REST"
+  ],
+  "author": "Felipe Prado",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Felipedoggy/backend-cadastro/issues"
+  },
+  "homepage": "https://github.com/Felipedoggy/backend-cadastro#readme",
+  "dependencies": {
+    "mysql2": "^3.12.0"
+  }
+}
