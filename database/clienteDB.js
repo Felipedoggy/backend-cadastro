@@ -51,7 +51,7 @@ export default class ClienteDB {
         const parametros = [cliente.nome];
         const [registros, campos] = await conexao.execute(sql, parametros);
         conexao.release();
-        listaClientes = [];
+        let listaClientes = [];
         for (const registro of registros) {
             const cliente = new Cliente(registro.id, registro.nome, registro.email, registro.telefone);
             listaClientes.push(cliente);
